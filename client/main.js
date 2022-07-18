@@ -8,8 +8,6 @@ const getCompliment = () => {
     });
 };
 
-
-
 const fortuneBtn = document.getElementById("fortuneButton")
 
 const getFortune = () => {
@@ -40,7 +38,8 @@ const getWorkout = () => {
     });
 };
 
-complimentBtn.addEventListener('click', getCompliment)
+
+ complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
 funBtn.addEventListener('click', getFun)
 workoutBtn.addEventListener('click', getWorkout)

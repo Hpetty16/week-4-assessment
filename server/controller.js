@@ -5,9 +5,9 @@ module.exports = {
       
         // choose random compliment
         let randomIndex = Math.floor(Math.random() * compliments.length);
-        let randomCompliment = compliments[randomIndex];
+        let randomCompliments = compliments[randomIndex];
       
-        res.status(200).send(randomCompliment);
+        res.status(200).send(randomCompliments);
     },
     
 
@@ -15,16 +15,16 @@ module.exports = {
         const fortune = ["A beautiful, smart, and loving person will be coming into your life.", "A dubious friend may be an enemy in camouflage.","A golden egg of opportunity falls into your lap this month.","A hunch is creativity trying to tell you something.","A pleasant surprise is waiting for you."];
 
         let fortIndex = Math.floor(Math.random() * fortune.length);
-        let randomFortunes = fortune[fortIndex];
+        let randomFortune = fortune[fortIndex];
 
-        res.status(200).send(randomFortunes);
+        res.status(200).send(randomFortune);
     },
 
     getFun: (req, res) => {
         const fun = [`Learn to Juggle`, `Do Some Gardening`, `Visit Friends`, `Visit Free Museums`, `Visit a Zoo or Wildlife Reserve`];
 
         let fortIndex = Math.floor(Math.random() * fun.length);
-        let randomFortunes = fun[fortIndex];
+        let randomFun = fun[fortIndex];
 
         res.status(200).send(randomFun);
     },
