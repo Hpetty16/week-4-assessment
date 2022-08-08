@@ -12,7 +12,13 @@ module.exports = {
     
 
     getFortune: (req, res) => {
-        const fortune = ["A beautiful, smart, and loving person will be coming into your life.", "A dubious friend may be an enemy in camouflage.","A golden egg of opportunity falls into your lap this month.","A hunch is creativity trying to tell you something.","A pleasant surprise is waiting for you."];
+        const fortune = [
+        "A beautiful, smart, and loving person will be coming into your life.", 
+        "A dubious friend may be an enemy in camouflage.",
+        "A golden egg of opportunity falls into your lap this month.",
+        "A hunch is creativity trying to tell you something.",
+        "A pleasant surprise is waiting for you."
+    ];
 
         let fortIndex = Math.floor(Math.random() * fortune.length);
         let randomFortune = fortune[fortIndex];
@@ -20,25 +26,37 @@ module.exports = {
         res.status(200).send(randomFortune);
     },
 
-    getFun: (req, res) => {
-        const fun = [`Learn to Juggle`, `Do Some Gardening`, `Visit Friends`, `Visit Free Museums`, `Visit a Zoo or Wildlife Reserve`];
+    formSubmitted: (req,res) => {
+        formDatabase.push(req.body)
+        console.log(formDatabase)
+        res.status(200).send({success: true})
+    }
 
-        let fortIndex = Math.floor(Math.random() * fun.length);
-        let randomFun = fun[fortIndex];
+    // getFun: (req, res) => {
+    //     const fun = [`Learn to Juggle`, `Do Some Gardening`, `Visit Friends`, `Visit Free Museums`, `Visit a Zoo or Wildlife Reserve`];
 
-        res.status(200).send(randomFun);
-    },
+    //     let fortIndex = Math.floor(Math.random() * fun.length);
+    //     let randomFun = fun[fortIndex];
 
-    getWorkout: (req, res) => {
-        const workout = [`Walking`, `Squats`, `Lunges`, `Push-ups`, `Abdominal Crunches`, `Go Swimming`];
+    //     res.status(200).send(randomFun);
+    // },
 
-        let fortIndex = Math.floor(Math.random() * workout.length);
-        let randomWorkout = workout[fortIndex];
+    // getWorkout: (req, res) => {
+    //     const workout = [`Walking`, `Squats`, `Lunges`, `Push-ups`, `Abdominal Crunches`, `Go Swimming`];
 
-        res.status(200).send(randomWorkout);
-    },
+    //     let fortIndex = Math.floor(Math.random() * workout.length);
+    //     let randomWorkout = workout[fortIndex];
+
+    //     res.status(200).send(randomWorkout);
+    // },
 
     
 
 }
 
+const formDatabase = [
+    {
+    name: `Tiffany Garret`,
+    email: `bosstiff546@gmail.com`
+    },
+]
