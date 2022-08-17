@@ -1,3 +1,6 @@
+const nameArr = [`Haywood`,`Dominic`, `Jade`, `Austin`]
+
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -30,27 +33,28 @@ module.exports = {
         formDatabase.push(req.body)
         console.log(formDatabase)
         res.status(200).send({success: true})
-    }
-
-    // getFun: (req, res) => {
-    //     const fun = [`Learn to Juggle`, `Do Some Gardening`, `Visit Friends`, `Visit Free Museums`, `Visit a Zoo or Wildlife Reserve`];
-
-    //     let fortIndex = Math.floor(Math.random() * fun.length);
-    //     let randomFun = fun[fortIndex];
-
-    //     res.status(200).send(randomFun);
-    // },
-
-    // getWorkout: (req, res) => {
-    //     const workout = [`Walking`, `Squats`, `Lunges`, `Push-ups`, `Abdominal Crunches`, `Go Swimming`];
-
-    //     let fortIndex = Math.floor(Math.random() * workout.length);
-    //     let randomWorkout = workout[fortIndex];
-
-    //     res.status(200).send(randomWorkout);
-    // },
-
+    },
     
+    putName: (req, res) => {
+        console.log("Works")
+        console.log(req.params);
+        console.log(req.body);
+
+        const indexToEdit = +req.params.indexToEdit
+        nameArr(indexToEdit) = req.body.newName
+        res.status(200).send(nameArr)
+    },
+
+    deleteName: (req,res) => {
+        console.log("works")
+        console.log(req.params)
+
+        const indexToDelete = +req.params.id;
+
+        nameArr.splice(indexToDelete, 1);
+
+        res.status(200).send(nameArr);
+    },
 
 }
 
